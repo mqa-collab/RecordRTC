@@ -13,7 +13,7 @@
  * recorder.addStream(MediaStream);
  * recorder.mediaType = {
  *     audio: true, // or StereoAudioRecorder or MediaStreamRecorder
- *     video: true, // or WhammyRecorder or MediaStreamRecorder or WebAssemblyRecorder or CanvasRecorder
+ *     video: true, // or WhammyRecorder or MediaStreamRecorder or CanvasRecorder
  *     gif: true    // or GifRecorder
  * };
  * // mimeType is optional and should be set only in advance cases.
@@ -53,7 +53,7 @@ function MRecordRTC(mediaStream) {
      * var recorder = new MRecordRTC();
      * recorder.mediaType = {
      *     audio: true, // TRUE or StereoAudioRecorder or MediaStreamRecorder
-     *     video: true, // TRUE or WhammyRecorder or MediaStreamRecorder or WebAssemblyRecorder or CanvasRecorder
+     *     video: true, // TRUE or WhammyRecorder or MediaStreamRecorder or CanvasRecorder
      *     gif  : true  // TRUE or GifRecorder
      * };
      */
@@ -134,7 +134,6 @@ function MRecordRTC(mediaStream) {
 
                     if (recorderType && recorderType === WhammyRecorder) {
                         // Firefox does NOT supports webp-encoding yet
-                        // But Firefox do supports WebAssemblyRecorder
                         recorderType = MediaStreamRecorder;
                     }
                 } else {
@@ -155,8 +154,8 @@ function MRecordRTC(mediaStream) {
                 onTimeStamp: this.onTimeStamp,
                 workerPath: this.workerPath,
                 webAssemblyPath: this.webAssemblyPath,
-                frameRate: this.frameRate, // used by WebAssemblyRecorder; values: usually 30; accepts any.
-                bitrate: this.bitrate // used by WebAssemblyRecorder; values: 0 to 1000+
+                frameRate: this.frameRate,
+                bitrate: this.bitrate
             });
 
             if (!mediaType.audio) {

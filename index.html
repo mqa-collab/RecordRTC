@@ -482,13 +482,6 @@
                     type = 'video';
                 }
 
-                if(mediaContainerFormat.value === 'WebAssembly') {
-                    mimeType = 'video/webm';
-                    fileExtension = 'webm';
-                    recorderType = WebAssemblyRecorder;
-                    type = 'video';
-                }
-
                 if(mediaContainerFormat.value === 'gif') {
                     mimeType = 'image/gif';
                     fileExtension = 'gif';
@@ -627,7 +620,7 @@
                         if(recorderType) {
                             options.recorderType = recorderType;
 
-                            if(recorderType == WhammyRecorder || recorderType == GifRecorder || recorderType == WebAssemblyRecorder) {
+                            if(recorderType == WhammyRecorder || recorderType == GifRecorder) {
                                 options.canvas = options.video = {
                                     width: defaultWidth || 320,
                                     height: defaultHeight || 240
@@ -675,7 +668,7 @@
                         if(recorderType) {
                             options.recorderType = recorderType;
 
-                            if(recorderType == WhammyRecorder || recorderType == GifRecorder || recorderType == WebAssemblyRecorder) {
+                            if(recorderType == WhammyRecorder || recorderType == GifRecorder) {
                                 options.canvas = options.video = {
                                     width: defaultWidth || 320,
                                     height: defaultHeight || 240
@@ -716,7 +709,7 @@
                         if(recorderType) {
                             options.recorderType = recorderType;
 
-                            if(recorderType == WhammyRecorder || recorderType == GifRecorder || recorderType == WebAssemblyRecorder) {
+                            if(recorderType == WhammyRecorder || recorderType == GifRecorder) {
                                 options.canvas = options.video = {
                                     width: defaultWidth || 320,
                                     height: defaultHeight || 240
@@ -1033,10 +1026,6 @@
 
                 if(DetectRTC.browser.name == 'Chrome') {
                     recordingOptions.push('whammy'); // WhammyRecorder
-                }
-
-                if(DetectRTC.browser.name == 'Chrome') {
-                    recordingOptions.push('WebAssembly'); // WebAssemblyRecorder
                 }
 
                 recordingOptions.push('default'); // Default mimeType for MediaStreamRecorder
