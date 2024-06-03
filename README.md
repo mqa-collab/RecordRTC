@@ -104,7 +104,7 @@ const recorder = RecordRTC(stream, {
     // demo: simple-demos/isTypeSupported.html
     mimeType: 'video/webm',
 
-    // MediaStreamRecorder, StereoAudioRecorder, WebAssemblyRecorder
+    // MediaStreamRecorder, StereoAudioRecorder
     // CanvasRecorder, GifRecorder, WhammyRecorder
     recorderType: MediaStreamRecorder,
 
@@ -170,10 +170,8 @@ const recorder = RecordRTC(stream, {
     // 1 or 2
     numberOfAudioChannels: 2,
 
-    // used by WebAssemblyRecorder
     frameRate: 30,
 
-    // used by WebAssemblyRecorder
     bitrate: 128000,
 
     // used by MultiStreamRecorder - to access HTMLCanvasElement
@@ -329,7 +327,6 @@ DiskStorage = {
 | Library     | Usage |
 | ------------- |------------|
 | [Recorderjs](https://github.com/mattdiamond/Recorderjs) | StereoAudioRecorder |
-| [webm-wasm](https://github.com/GoogleChromeLabs/webm-wasm) | WebAssemblyRecorder |
 | [jsGif](https://github.com/antimatter15/jsgif) | GifRecorder |
 | [whammy](https://github.com/antimatter15/whammy) | WhammyRecorder |
 
